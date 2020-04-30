@@ -62,7 +62,9 @@
     "test:coverage": "NODE_ENV=test istanbul cover _mocha -- --compilers ejs:ejsify 'src/**/*.spec.js'",
     "test:e2e": "NODE_ENV=test mocha 'src/**/*.e2e.js'",
     "test:npm": "(cd .npmjs && npm i) && node test/npmParity && node test/npmJsonRpc && (rm -rf .npmjs/node_modules)",
-    "prepush": "npm run lint:cached"
+    "prepush": "npm run lint:cached",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "napa": {
     "qrcode-generator": "kazuhikoarase/qrcode-generator"
@@ -235,6 +237,8 @@
     "whatwg-fetch": "2.0.1",
     "worker-loader": "^0.8.0",
     "yarn": "^0.21.3",
-    "zxcvbn": "4.4.1"
-  }
+    "zxcvbn": "4.4.1",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
